@@ -27,7 +27,11 @@ GoRouter appRouter(AppRouterRef ref) {
       ),
       GoRoute(
         path: '/search-results',
-        builder: (context, state) => const SearchResultsScreen(),
+        builder: (context, state) {
+          final uid = state.uri.queryParameters['uid'];
+          final address = state.uri.queryParameters['address'];
+          return SearchResultsScreen(uid: uid, address: address);
+        },
       ),
       GoRoute(
         path: '/parcel-detail/:id',

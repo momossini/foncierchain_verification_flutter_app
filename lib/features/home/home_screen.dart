@@ -138,9 +138,13 @@ class HomeScreen extends ConsumerWidget {
   void _performSearch(BuildContext context, WidgetRef ref, ({SearchMode mode, String query}) searchState) {
     if (searchState.query.isEmpty) return;
 
-    // Pour le moment, on navigue juste vers l'écran des résultats.
-    // La recherche réelle sera effectuée par le ResultsScreen en utilisant le provider.
-    context.push('/search-results');
+    final queryParams = searchState.mode == SearchMode.uid
+        ? {'uid': searchState.query}
+        : {'address': searchState.query};
+
+    context.push(
+      Uri(path: '/search-results', queryParameters: queryParams).toString(),
+    );
   }
 }
 
