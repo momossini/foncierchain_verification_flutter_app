@@ -12,8 +12,8 @@
 - [x] Implémenter les repositories et sources de données
 
 ## Phase 3 : Routing & Navigation
-- [ ] Configurer `go_router`
-- [ ] Implémenter l'écran Splash
+- [x] Configurer `go_router`
+- [x] Implémenter l'écran Splash
 
 ## Phase 4 : Écran Accueil
 - [ ] UI de l'écran d'accueil
