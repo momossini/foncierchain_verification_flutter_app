@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'search_providers.dart';
 import 'widgets/parcel_result_card.dart';
 import '../../core/theme/app_colors.dart';
+import '../../shared/widgets/loading_view.dart';
+import '../../shared/widgets/error_view.dart';
 
 class SearchResultsScreen extends ConsumerWidget {
   final String? uid;
@@ -31,29 +33,11 @@ class SearchResultsScreen extends ConsumerWidget {
             },
           );
         },
-        loading: () => const _LoadingView(),
-        error: (error, stack) => _ErrorView(
+        loading: () => const AppLoadingView(message: 'Recherche en cours...'),
+        error: (error, stack) => AppErrorView(
           message: error.toString(),
           onRetry: () => ref.refresh(searchResultsProvider(uid: uid, address: address)),
         ),
-      ),
-    );
-  }
-}
-
-class _LoadingView extends StatelessWidget {
-  const _LoadingView();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircularProgressIndicator(),
-          SizedBox(height: 16),
-          Text('Recherche en cours...'),
-        ],
       ),
     );
   }
@@ -86,44 +70,6 @@ class _NoResultView extends StatelessWidget {
             child: const Text('Retour à l\'accueil'),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _ErrorView extends StatelessWidget {
-  final String message;
-  final VoidCallback onRetry;
-
-  const _ErrorView({required this.message, required this.onRetry});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.error_outline_rounded, size: 80, color: AppColors.error),
-            const SizedBox(height: 16),
-            const Text(
-              'Une erreur est survenue',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              message,
-              textAlign: TextAlign.center,
-              style: const TextStyle(color: AppColors.textSecondary),
-            ),
-            const SizedBox(height: 24),
-            ElevatedButton(
-              onPressed: onRetry,
-              child: const Text('RÉESSAYER'),
-            ),
-          ],
-        ),
       ),
     );
   }
