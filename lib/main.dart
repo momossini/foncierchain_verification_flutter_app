@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'app/router/app_router.dart';
-import 'core/theme/app_colors.dart';
+import 'core/theme/app_theme.dart';
 
 void main() {
   runApp(
@@ -20,22 +20,7 @@ class MyApp extends ConsumerWidget {
 
     return MaterialApp.router(
       title: 'FoncierChain Citoyen',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: AppColors.primary,
-          primary: AppColors.primary,
-          secondary: AppColors.secondary,
-          surface: AppColors.surface,
-          error: AppColors.error,
-        ),
-        useMaterial3: true,
-        scaffoldBackgroundColor: AppColors.background,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: AppColors.navyBlue,
-          foregroundColor: Colors.white,
-          elevation: 0,
-        ),
-      ),
+      theme: AppTheme.lightTheme,
       routerConfig: router,
     );
   }
