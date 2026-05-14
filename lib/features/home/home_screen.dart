@@ -91,21 +91,10 @@ class HomeScreen extends ConsumerWidget {
 
             // Bouton de recherche
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primary,
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
               onPressed: searchState.query.isEmpty
                 ? null
                 : () => _performSearch(context, ref, searchState),
-              child: const Text(
-                'RECHERCHER',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
+              child: const Text('RECHERCHER'),
             ),
             const SizedBox(height: 40),
 

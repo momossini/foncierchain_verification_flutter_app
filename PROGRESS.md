@@ -39,8 +39,8 @@
 - [x] Widgets de chargement (Skeletons)
 
 ## Phase 9 : Thème & Design System
-- [ ] Configuration complète du thème Material 3
-- [ ] Composants UI partagés
+- [x] Configuration complète du thème Material 3
+- [x] Composants UI partagés
 
 ## Phase 10 : Sécurité & Confidentialité
 - [ ] Validation des données publiques uniquement
