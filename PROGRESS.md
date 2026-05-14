@@ -35,8 +35,8 @@
 - [x] Écran Support / FAQ
 
 ## Phase 8 : Gestion des Erreurs & États Globaux
-- [ ] Écrans d'erreur dédiés
-- [ ] Widgets de chargement (Skeletons)
+- [x] Écrans d'erreur dédiés
+- [x] Widgets de chargement (Skeletons)
 
 ## Phase 9 : Thème & Design System
 - [ ] Configuration complète du thème Material 3

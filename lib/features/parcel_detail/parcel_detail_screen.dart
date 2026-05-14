@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'parcel_detail_providers.dart';
 import 'widgets/history_timeline.dart';
 import '../../core/theme/app_colors.dart';
+import '../../shared/widgets/loading_view.dart';
+import '../../shared/widgets/error_view.dart';
 
 class ParcelDetailScreen extends ConsumerWidget {
   final String id;
@@ -84,8 +86,8 @@ class ParcelDetailScreen extends ConsumerWidget {
             ],
           ),
         ),
-        loading: () => const _LoadingView(),
-        error: (error, stack) => _ErrorView(
+        loading: () => const AppLoadingView(),
+        error: (error, stack) => AppErrorView(
           message: error.toString(),
           onRetry: () => ref.refresh(parcelDetailProvider(id)),
         ),
@@ -169,41 +171,6 @@ class _StatusSection extends StatelessWidget {
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: color),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _LoadingView extends StatelessWidget {
-  const _LoadingView();
-  @override
-  Widget build(BuildContext context) {
-    return const Center(child: CircularProgressIndicator());
-  }
-}
-
-class _ErrorView extends StatelessWidget {
-  final String message;
-  final VoidCallback onRetry;
-  const _ErrorView({required this.message, required this.onRetry});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.error_outline, size: 60, color: AppColors.error),
-            const SizedBox(height: 16),
-            const Text('Impossible de charger le détail', style: TextStyle(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 8),
-            Text(message, textAlign: TextAlign.center, style: const TextStyle(color: AppColors.textSecondary)),
-            const SizedBox(height: 24),
-            ElevatedButton(onPressed: onRetry, child: const Text('RÉESSAYER')),
-          ],
-        ),
       ),
     );
   }
