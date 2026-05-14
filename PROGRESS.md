@@ -7,9 +7,9 @@
 - [x] Définir les constantes de thème et couleurs
 
 ## Phase 2 : Couche Réseau & Modèles de Données
-- [ ] Configurer le client Dio
-- [ ] Créer les modèles `ParcelPublic` et `ParcelHistoryPublic`
-- [ ] Implémenter les repositories et sources de données
+- [x] Configurer le client Dio
+- [x] Créer les modèles `ParcelPublic` et `ParcelHistoryPublic`
+- [x] Implémenter les repositories et sources de données
 
 ## Phase 3 : Routing & Navigation
 - [ ] Configurer `go_router`
