@@ -21,9 +21,9 @@
 - [x] Gestion des états UX
 
 ## Phase 5 : Écran Résultats de Recherche
-- [ ] UI des résultats
-- [ ] Cartes de résultat
-- [ ] Gestion des états (vide, erreur, chargement)
+- [x] UI des résultats
+- [x] Cartes de résultat
+- [x] Gestion des états (vide, erreur, chargement)
 
 ## Phase 6 : Écran Détail Parcelle
 - [ ] UI du détail
