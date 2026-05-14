@@ -26,9 +26,9 @@
 - [x] Gestion des états (vide, erreur, chargement)
 
 ## Phase 6 : Écran Détail Parcelle
-- [ ] UI du détail
-- [ ] Historique simplifié (Timeline)
-- [ ] États UX
+- [x] UI du détail
+- [x] Historique simplifié (Timeline)
+- [x] États UX
 
 ## Phase 7 : Écrans Glossaire & Support
 - [ ] Écran Glossaire
