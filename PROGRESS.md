@@ -43,8 +43,8 @@
 - [x] Composants UI partagés
 
 ## Phase 10 : Sécurité & Confidentialité
-- [ ] Validation des données publiques uniquement
-- [ ] Sécurisation des configurations
+- [x] Validation des données publiques uniquement
+- [x] Sécurisation des configurations
 
 ## Phase 11 : Tests & Validation
 - [ ] Tests unitaires et d'intégration
