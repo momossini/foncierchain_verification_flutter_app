@@ -16,9 +16,9 @@
 - [x] Implémenter l'écran Splash
 
 ## Phase 4 : Écran Accueil
-- [ ] UI de l'écran d'accueil
-- [ ] Logique de recherche (Riverpod)
-- [ ] Gestion des états UX
+- [x] UI de l'écran d'accueil
+- [x] Logique de recherche (Riverpod)
+- [x] Gestion des états UX
 
 ## Phase 5 : Écran Résultats de Recherche
 - [ ] UI des résultats
