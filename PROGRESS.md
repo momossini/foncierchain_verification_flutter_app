@@ -31,8 +31,8 @@
 - [x] États UX
 
 ## Phase 7 : Écrans Glossaire & Support
-- [ ] Écran Glossaire
-- [ ] Écran Support / FAQ
+- [x] Écran Glossaire
+- [x] Écran Support / FAQ
 
 ## Phase 8 : Gestion des Erreurs & États Globaux
 - [ ] Écrans d'erreur dédiés
