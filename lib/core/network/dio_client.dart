@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../config/env_config.dart';
@@ -18,17 +19,20 @@ Dio dioClient(DioClientRef ref) {
     ),
   );
 
-  // Ajout d'un intercepteur pour le logging ou la gestion globale des erreurs si besoin
+  // Intercepteur de sécurité : journalisation limitée et anonymisation si nécessaire
   dio.interceptors.add(
     InterceptorsWrapper(
       onRequest: (options, handler) {
-        // On peut ajouter ici des logs de debug si nécessaire
+        // Log minimal sans données sensibles
+        debugPrint('🌐 API Request: ${options.method} ${options.path}');
         return handler.next(options);
       },
       onResponse: (response, handler) {
         return handler.next(response);
       },
       onError: (DioException e, handler) {
+        // Gestion sécurisée des erreurs : ne pas exposer de détails techniques internes
+        debugPrint('❌ API Error: ${e.response?.statusCode} ${e.requestOptions.path}');
         return handler.next(e);
       },
     ),

@@ -6,6 +6,7 @@ part 'parcel_public.g.dart';
 
 @freezed
 class ParcelPublic with _$ParcelPublic {
+  /// Représente une parcelle avec uniquement des données publiques autorisées.
   const factory ParcelPublic({
     required String id,
     required String parcelUid,
@@ -13,7 +14,7 @@ class ParcelPublic with _$ParcelPublic {
     required String district,
     required String city,
     required String status,
-    String? currentOwnerName,
+    String? currentOwnerName, // Autorisé publiquement selon spec
     @Default([]) List<ParcelHistoryPublic> history,
   }) = _ParcelPublic;
 

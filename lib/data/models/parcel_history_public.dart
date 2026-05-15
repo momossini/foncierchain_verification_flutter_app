@@ -5,6 +5,7 @@ part 'parcel_history_public.g.dart';
 
 @freezed
 class ParcelHistoryPublic with _$ParcelHistoryPublic {
+  /// Représente un événement d'historique simplifié destiné au public.
   const factory ParcelHistoryPublic({
     required String id,
     required String actionType,
