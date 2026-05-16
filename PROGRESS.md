@@ -47,8 +47,8 @@
 - [x] Sécurisation des configurations
 
 ## Phase 11 : Tests & Validation
-- [ ] Tests unitaires et d'intégration
-- [ ] Validation du scénario de démo
+- [/] Tests unitaires et d'intégration
+- [/] Validation du scénario de démo
 
 ## Phase 12 : Livraison
 - [ ] Nettoyage du code et documentation
