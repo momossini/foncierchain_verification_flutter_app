@@ -14,12 +14,12 @@ class SearchResultsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final searchResultsAsync = ref.watch(searchResultsProvider(uid: uid, address: address));
+    final searchResultsAsync = ref.watch(
+      searchResultsProvider(uid: uid, address: address),
+    );
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Résultats'),
-      ),
+      appBar: AppBar(title: const Text('Résultats')),
       body: searchResultsAsync.when(
         data: (parcels) {
           if (parcels.isEmpty) {
@@ -36,7 +36,8 @@ class SearchResultsScreen extends ConsumerWidget {
         loading: () => const AppLoadingView(message: 'Recherche en cours...'),
         error: (error, stack) => AppErrorView(
           message: error.toString(),
-          onRetry: () => ref.refresh(searchResultsProvider(uid: uid, address: address)),
+          onRetry: () =>
+              ref.refresh(searchResultsProvider(uid: uid, address: address)),
         ),
       ),
     );

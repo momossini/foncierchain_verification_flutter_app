@@ -14,7 +14,10 @@ class SimplifiedHistoryTimeline extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 20),
         child: Text(
           'Aucun historique disponible pour cette parcelle.',
-          style: TextStyle(fontStyle: FontStyle.italic, color: AppColors.textSecondary),
+          style: TextStyle(
+            fontStyle: FontStyle.italic,
+            color: AppColors.textSecondary,
+          ),
         ),
       );
     }
@@ -84,7 +87,8 @@ class SimplifiedHistoryTimeline extends StatelessWidget {
                           style: const TextStyle(fontSize: 14),
                         ),
                       ],
-                      if (item.previousOwner != null || item.newOwner != null) ...[
+                      if (item.previousOwner != null ||
+                          item.newOwner != null) ...[
                         const SizedBox(height: 8),
                         Container(
                           padding: const EdgeInsets.all(8),
@@ -103,7 +107,10 @@ class SimplifiedHistoryTimeline extends StatelessWidget {
                               if (item.newOwner != null)
                                 Text(
                                   'Nouveau : ${item.newOwner}',
-                                  style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                             ],
                           ),

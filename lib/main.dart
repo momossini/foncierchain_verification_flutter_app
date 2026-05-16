@@ -4,11 +4,7 @@ import 'app/router/app_router.dart';
 import 'core/theme/app_theme.dart';
 
 void main() {
-  runApp(
-    const ProviderScope(
-      child: MyApp(),
-    ),
-  );
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends ConsumerWidget {

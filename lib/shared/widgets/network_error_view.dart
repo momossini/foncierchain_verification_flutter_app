@@ -10,7 +10,8 @@ class NetworkErrorView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppErrorView(
       title: 'Erreur de connexion',
-      message: 'Impossible de joindre le serveur. Veuillez vérifier votre connexion internet.',
+      message:
+          'Impossible de joindre le serveur. Veuillez vérifier votre connexion internet.',
       icon: Icons.wifi_off_rounded,
       onRetry: onRetry,
     );

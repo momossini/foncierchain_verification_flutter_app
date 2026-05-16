@@ -44,7 +44,11 @@ class ParcelResultCard extends StatelessWidget {
               const SizedBox(height: 12),
               Row(
                 children: [
-                  const Icon(Icons.location_on, size: 16, color: AppColors.textSecondary),
+                  const Icon(
+                    Icons.location_on,
+                    size: 16,
+                    color: AppColors.textSecondary,
+                  ),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
@@ -58,7 +62,11 @@ class ParcelResultCard extends StatelessWidget {
                 const SizedBox(height: 8),
                 Row(
                   children: [
-                    const Icon(Icons.person, size: 16, color: AppColors.textSecondary),
+                    const Icon(
+                      Icons.person,
+                      size: 16,
+                      color: AppColors.textSecondary,
+                    ),
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(

@@ -21,7 +21,7 @@ void main() {
             'newOwner': 'John Doe',
             'details': 'Transfer of ownership',
             'createdAt': '2023-10-01T10:00:00.000Z',
-          }
+          },
         ],
       };
 

@@ -17,25 +17,33 @@ class ParcelApiSource {
 
   ParcelApiSource(this._dio);
 
-  Future<ApiEnvelope<List<ParcelPublic>>> searchByParcelUid(String parcelUid) async {
+  Future<ApiEnvelope<List<ParcelPublic>>> searchByParcelUid(
+    String parcelUid,
+  ) async {
     final response = await _dio.get(
       '${EnvConfig.apiVersion}/public/parcels/search',
       queryParameters: {'parceluid': parcelUid},
     );
     return ApiEnvelope.fromJson(
       response.data,
-      (json) => (json as List).map((e) => ParcelPublic.fromJson(e as Map<String, dynamic>)).toList(),
+      (json) => (json as List)
+          .map((e) => ParcelPublic.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
   }
 
-  Future<ApiEnvelope<List<ParcelPublic>>> searchByAddress(String address) async {
+  Future<ApiEnvelope<List<ParcelPublic>>> searchByAddress(
+    String address,
+  ) async {
     final response = await _dio.get(
       '${EnvConfig.apiVersion}/public/parcels/search',
       queryParameters: {'address': address},
     );
     return ApiEnvelope.fromJson(
       response.data,
-      (json) => (json as List).map((e) => ParcelPublic.fromJson(e as Map<String, dynamic>)).toList(),
+      (json) => (json as List)
+          .map((e) => ParcelPublic.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
   }
 

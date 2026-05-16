@@ -6,7 +6,9 @@ import 'package:foncierchain_verification_flutter_app/app/router/app_router.dart
 import 'package:foncierchain_verification_flutter_app/core/theme/app_theme.dart';
 
 void main() {
-  testWidgets('Home screen search field updates provider state', (tester) async {
+  testWidgets('Home screen search field updates provider state', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       ProviderScope(
         child: MaterialApp(
