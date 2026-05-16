@@ -31,11 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.domain,
-              size: 100,
-              color: AppColors.accent,
-            ),
+            Icon(Icons.domain, size: 100, color: AppColors.accent),
             SizedBox(height: 20),
             Text(
               'FoncierChain',
@@ -49,10 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(height: 10),
             Text(
               'Vérification Citoyenne',
-              style: TextStyle(
-                color: AppColors.lightYellow,
-                fontSize: 16,
-              ),
+              style: TextStyle(color: AppColors.lightYellow, fontSize: 16),
             ),
           ],
         ),

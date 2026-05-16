@@ -32,7 +32,9 @@ Dio dioClient(DioClientRef ref) {
       },
       onError: (DioException e, handler) {
         // Gestion sécurisée des erreurs : ne pas exposer de détails techniques internes
-        debugPrint('❌ API Error: ${e.response?.statusCode} ${e.requestOptions.path}');
+        debugPrint(
+          '❌ API Error: ${e.response?.statusCode} ${e.requestOptions.path}',
+        );
         return handler.next(e);
       },
     ),

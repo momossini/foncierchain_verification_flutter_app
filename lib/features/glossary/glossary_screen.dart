@@ -6,7 +6,11 @@ class GlossaryItem {
   final String definition;
   final String category;
 
-  GlossaryItem({required this.term, required this.definition, required this.category});
+  GlossaryItem({
+    required this.term,
+    required this.definition,
+    required this.category,
+  });
 }
 
 class GlossaryScreen extends StatefulWidget {
@@ -20,32 +24,38 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
   final List<GlossaryItem> _allTerms = [
     GlossaryItem(
       term: 'Parcelle',
-      definition: 'Portion de terrain d\'un seul tenant située dans une même commune, appartenant à un même propriétaire et faisant l\'objet d\'un numéro unique au cadastre.',
+      definition:
+          'Portion de terrain d\'un seul tenant située dans une même commune, appartenant à un même propriétaire et faisant l\'objet d\'un numéro unique au cadastre.',
       category: 'Général',
     ),
     GlossaryItem(
       term: 'Mutation',
-      definition: 'Tout changement de propriétaire d\'un bien immobilier, que ce soit par vente, héritage ou donation.',
+      definition:
+          'Tout changement de propriétaire d\'un bien immobilier, que ce soit par vente, héritage ou donation.',
       category: 'Opérations',
     ),
     GlossaryItem(
       term: 'Statut Actif',
-      definition: 'Indique que la parcelle est officiellement enregistrée et que ses données sont à jour dans le registre numérique.',
+      definition:
+          'Indique que la parcelle est officiellement enregistrée et que ses données sont à jour dans le registre numérique.',
       category: 'Statuts',
     ),
     GlossaryItem(
       term: 'En Revue',
-      definition: 'Signifie que des modifications ou une vérification sont en cours sur cette parcelle par les services administratifs.',
+      definition:
+          'Signifie que des modifications ou une vérification sont en cours sur cette parcelle par les services administratifs.',
       category: 'Statuts',
     ),
     GlossaryItem(
       term: 'UID (Identifiant Unique)',
-      definition: 'Code alphanumérique unique permettant d\'identifier sans ambiguïté une parcelle sur tout le territoire.',
+      definition:
+          'Code alphanumérique unique permettant d\'identifier sans ambiguïté une parcelle sur tout le territoire.',
       category: 'Technique',
     ),
     GlossaryItem(
       term: 'Titre Foncier',
-      definition: 'Document officiel garantissant le droit de propriété sur un terrain.',
+      definition:
+          'Document officiel garantissant le droit de propriété sur un terrain.',
       category: 'Documents',
     ),
   ];
@@ -62,9 +72,11 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
   void _filterTerms(String query) {
     setState(() {
       _filteredTerms = _allTerms
-          .where((item) =>
-              item.term.toLowerCase().contains(query.toLowerCase()) ||
-              item.definition.toLowerCase().contains(query.toLowerCase()))
+          .where(
+            (item) =>
+                item.term.toLowerCase().contains(query.toLowerCase()) ||
+                item.definition.toLowerCase().contains(query.toLowerCase()),
+          )
           .toList();
     });
   }
@@ -72,9 +84,7 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Glossaire'),
-      ),
+      appBar: AppBar(title: const Text('Glossaire')),
       body: Column(
         children: [
           // Barre de recherche
@@ -138,7 +148,10 @@ class _GlossaryCard extends StatelessWidget {
       child: ExpansionTile(
         title: Text(
           item.term,
-          style: const TextStyle(fontWeight: FontWeight.bold, color: AppColors.primary),
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            color: AppColors.primary,
+          ),
         ),
         subtitle: Text(
           item.category,
@@ -148,12 +161,7 @@ class _GlossaryCard extends StatelessWidget {
         childrenPadding: const EdgeInsets.all(16),
         expandedCrossAxisAlignment: CrossAxisAlignment.start,
         shape: const RoundedRectangleBorder(side: BorderSide.none),
-        children: [
-          Text(
-            item.definition,
-            style: const TextStyle(height: 1.5),
-          ),
-        ],
+        children: [Text(item.definition, style: const TextStyle(height: 1.5))],
       ),
     );
   }

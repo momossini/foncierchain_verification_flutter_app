@@ -7,9 +7,7 @@ class SupportScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Support et Aide'),
-      ),
+      appBar: AppBar(title: const Text('Support et Aide')),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -27,15 +25,18 @@ class SupportScreen extends StatelessWidget {
 
             _FaqItem(
               question: 'Ma parcelle est introuvable, que faire ?',
-              answer: 'Vérifiez d\'abord l\'orthographe de l\'adresse ou l\'exactitude de l\'UID. Si le problème persiste, il est possible que la parcelle ne soit pas encore numérisée dans le registre national.',
+              answer:
+                  'Vérifiez d\'abord l\'orthographe de l\'adresse ou l\'exactitude de l\'UID. Si le problème persiste, il est possible que la parcelle ne soit pas encore numérisée dans le registre national.',
             ),
             _FaqItem(
               question: 'Les informations semblent erronées ?',
-              answer: 'Si vous constatez une erreur dans le statut ou le propriétaire affiché, veuillez contacter le service du cadastre de votre circonscription avec vos documents officiels.',
+              answer:
+                  'Si vous constatez une erreur dans le statut ou le propriétaire affiché, veuillez contacter le service du cadastre de votre circonscription avec vos documents officiels.',
             ),
             _FaqItem(
               question: 'Comment obtenir un titre foncier ?',
-              answer: 'Cette application est une interface de consultation. Pour toute démarche administrative, vous devez vous rendre sur le portail agent ou en préfecture.',
+              answer:
+                  'Cette application est une interface de consultation. Pour toute démarche administrative, vous devez vous rendre sur le portail agent ou en préfecture.',
             ),
 
             const SizedBox(height: 40),
@@ -140,7 +141,11 @@ class _ContactTile extends StatelessWidget {
   final String label;
   final String value;
 
-  const _ContactTile({required this.icon, required this.label, required this.value});
+  const _ContactTile({
+    required this.icon,
+    required this.label,
+    required this.value,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -160,7 +165,10 @@ class _ContactTile extends StatelessWidget {
           children: [
             Text(
               label,
-              style: const TextStyle(fontSize: 12, color: AppColors.textSecondary),
+              style: const TextStyle(
+                fontSize: 12,
+                color: AppColors.textSecondary,
+              ),
             ),
             Text(
               value,

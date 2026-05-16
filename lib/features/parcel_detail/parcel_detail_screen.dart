@@ -15,9 +15,7 @@ class ParcelDetailScreen extends ConsumerWidget {
     final parcelAsync = ref.watch(parcelDetailProvider(id));
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Détail de la parcelle'),
-      ),
+      appBar: AppBar(title: const Text('Détail de la parcelle')),
       body: parcelAsync.when(
         data: (parcel) => SingleChildScrollView(
           padding: const EdgeInsets.all(24),
@@ -29,14 +27,34 @@ class ParcelDetailScreen extends ConsumerWidget {
               const SizedBox(height: 24),
 
               // Infos principales
-              _InfoTile(label: 'Identifiant Unique', value: parcel.parcelUid, icon: Icons.pin),
+              _InfoTile(
+                label: 'Identifiant Unique',
+                value: parcel.parcelUid,
+                icon: Icons.pin,
+              ),
               const Divider(height: 32),
-              _InfoTile(label: 'Adresse', value: parcel.address, icon: Icons.location_on),
+              _InfoTile(
+                label: 'Adresse',
+                value: parcel.address,
+                icon: Icons.location_on,
+              ),
               const SizedBox(height: 16),
               Row(
                 children: [
-                  Expanded(child: _InfoTile(label: 'Ville', value: parcel.city, icon: Icons.location_city)),
-                  Expanded(child: _InfoTile(label: 'District', value: parcel.district, icon: Icons.map)),
+                  Expanded(
+                    child: _InfoTile(
+                      label: 'Ville',
+                      value: parcel.city,
+                      icon: Icons.location_city,
+                    ),
+                  ),
+                  Expanded(
+                    child: _InfoTile(
+                      label: 'District',
+                      value: parcel.district,
+                      icon: Icons.map,
+                    ),
+                  ),
                 ],
               ),
               const Divider(height: 32),
@@ -68,7 +86,9 @@ class ParcelDetailScreen extends ConsumerWidget {
                 decoration: BoxDecoration(
                   color: AppColors.navyBlue.withOpacity(0.05),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppColors.navyBlue.withOpacity(0.1)),
+                  border: Border.all(
+                    color: AppColors.navyBlue.withOpacity(0.1),
+                  ),
                 ),
                 child: const Row(
                   children: [
@@ -77,7 +97,10 @@ class ParcelDetailScreen extends ConsumerWidget {
                     Expanded(
                       child: Text(
                         'Ces données sont issues du registre public certifié FoncierChain.',
-                        style: TextStyle(fontSize: 13, color: AppColors.primary),
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: AppColors.primary,
+                        ),
                       ),
                     ),
                   ],
@@ -101,7 +124,11 @@ class _InfoTile extends StatelessWidget {
   final String value;
   final IconData icon;
 
-  const _InfoTile({required this.label, required this.value, required this.icon});
+  const _InfoTile({
+    required this.label,
+    required this.value,
+    required this.icon,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -118,11 +145,18 @@ class _InfoTile extends StatelessWidget {
               children: [
                 Text(
                   label,
-                  style: const TextStyle(fontSize: 12, color: AppColors.textSecondary),
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: AppColors.textSecondary,
+                  ),
                 ),
                 Text(
                   value,
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppColors.textPrimary),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.textPrimary,
+                  ),
                 ),
               ],
             ),
@@ -164,11 +198,18 @@ class _StatusSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('STATUT ACTUEL', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+          const Text(
+            'STATUT ACTUEL',
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+          ),
           const SizedBox(height: 4),
           Text(
             status.toUpperCase(),
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: color),
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: color,
+            ),
           ),
         ],
       ),

@@ -23,7 +23,11 @@ class SearchQuery extends _$SearchQuery {
 }
 
 @riverpod
-Future<List<ParcelPublic>> searchResults(SearchResultsRef ref, {String? uid, String? address}) {
+Future<List<ParcelPublic>> searchResults(
+  SearchResultsRef ref, {
+  String? uid,
+  String? address,
+}) {
   final repository = ref.watch(parcelRepositoryProvider);
 
   if (uid != null && uid.isNotEmpty) {

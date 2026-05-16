@@ -12,10 +12,7 @@ class HomeScreen extends ConsumerWidget {
     final searchState = ref.watch(searchQueryProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('FoncierChain'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('FoncierChain'), centerTitle: true),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -41,10 +38,7 @@ class HomeScreen extends ConsumerWidget {
             const Text(
               'Recherchez une parcelle dans le registre public par son identifiant unique ou son adresse.',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                color: AppColors.darkGrey,
-              ),
+              style: TextStyle(fontSize: 16, color: AppColors.darkGrey),
             ),
             const SizedBox(height: 40),
 
@@ -64,7 +58,9 @@ class HomeScreen extends ConsumerWidget {
               ],
               selected: {searchState.mode},
               onSelectionChanged: (newSelection) {
-                ref.read(searchQueryProvider.notifier).updateMode(newSelection.first);
+                ref
+                    .read(searchQueryProvider.notifier)
+                    .updateMode(newSelection.first);
               },
             ),
             const SizedBox(height: 24),
@@ -92,8 +88,8 @@ class HomeScreen extends ConsumerWidget {
             // Bouton de recherche
             ElevatedButton(
               onPressed: searchState.query.isEmpty
-                ? null
-                : () => _performSearch(context, ref, searchState),
+                  ? null
+                  : () => _performSearch(context, ref, searchState),
               child: const Text('RECHERCHER'),
             ),
             const SizedBox(height: 40),
@@ -124,7 +120,11 @@ class HomeScreen extends ConsumerWidget {
     );
   }
 
-  void _performSearch(BuildContext context, WidgetRef ref, ({SearchMode mode, String query}) searchState) {
+  void _performSearch(
+    BuildContext context,
+    WidgetRef ref,
+    ({SearchMode mode, String query}) searchState,
+  ) {
     if (searchState.query.isEmpty) return;
 
     final queryParams = searchState.mode == SearchMode.uid

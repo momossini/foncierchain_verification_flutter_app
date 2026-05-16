@@ -26,7 +26,11 @@ class ParcelRepository implements IParcelRepository {
     if (envelope.success && envelope.data != null) {
       return envelope.data!;
     } else {
-      throw Exception(envelope.error?.message ?? envelope.message ?? 'Erreur lors de la recherche');
+      throw Exception(
+        envelope.error?.message ??
+            envelope.message ??
+            'Erreur lors de la recherche',
+      );
     }
   }
 
@@ -36,7 +40,11 @@ class ParcelRepository implements IParcelRepository {
     if (envelope.success && envelope.data != null) {
       return envelope.data!;
     } else {
-      throw Exception(envelope.error?.message ?? envelope.message ?? 'Erreur lors de la recherche');
+      throw Exception(
+        envelope.error?.message ??
+            envelope.message ??
+            'Erreur lors de la recherche',
+      );
     }
   }
 
@@ -46,7 +54,11 @@ class ParcelRepository implements IParcelRepository {
     if (envelope.success && envelope.data != null) {
       return envelope.data!;
     } else {
-      throw Exception(envelope.error?.message ?? envelope.message ?? 'Erreur lors de la récupération du détail');
+      throw Exception(
+        envelope.error?.message ??
+            envelope.message ??
+            'Erreur lors de la récupération du détail',
+      );
     }
   }
 }

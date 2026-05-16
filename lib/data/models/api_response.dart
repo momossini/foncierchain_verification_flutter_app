@@ -15,16 +15,13 @@ class ApiEnvelope<T> with _$ApiEnvelope<T> {
   factory ApiEnvelope.fromJson(
     Map<String, dynamic> json,
     T Function(Object? json) fromJsonT,
-  ) =>
-      _$ApiEnvelopeFromJson(json, fromJsonT);
+  ) => _$ApiEnvelopeFromJson(json, fromJsonT);
 }
 
 @freezed
 class ApiError with _$ApiError {
-  const factory ApiError({
-    required String code,
-    required String message,
-  }) = _ApiError;
+  const factory ApiError({required String code, required String message}) =
+      _ApiError;
 
   factory ApiError.fromJson(Map<String, dynamic> json) =>
       _$ApiErrorFromJson(json);
